@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ include "_layouts/_head.liquid" }}
+  </head>
+<body data-route={{route}}>
+  <main>
+    <article>
+      <h1>{{ title }}</h1>
+      <h2>{{ subtitle }}</h2>
+      <time pubdate="pubdate">{{ date }}</time>
+      {{ content }}
+    </article>
+  </main>
+</body>
+</html>
+

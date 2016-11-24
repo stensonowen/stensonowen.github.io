@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{ include "_layouts/_head.liquid" }}
+	</head>
+	<body data-route={{route}}>
+		
+
+		<main>
+
+        <div class="left" align="center" >
+            <br>
+            {{ include "_layouts/_bio.liquid" }}
+            <br>
+
+            <h3>Recent Blog Posts:</h3>
+            (left-justify?)
+            <ul style="list-style-type:none">
+                {% for post in posts %}
+                    {% if post.type == "blog" %}
+                        <li>
+                            <a href="/{{post.path}}">
+                                {{ post.date | date: '%D' }}: {{post.title}}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
+        <div class="right">
+            {% if is_post %}
+                <!--we're a post, boys-->
+                {% include '_layouts/post.liquid' %}
+            {% else %}
+                <!--NOT A POST-->
+                {{ content }}
+            {% endif %}
+        </div>
+
+
+        </main>
+    </body>
+</html>
