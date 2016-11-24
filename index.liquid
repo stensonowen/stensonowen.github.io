@@ -1,0 +1,60 @@
+extends: default.liquid
+
+title: Projects
+---
+
+<ul class="project-list">
+    <div align="center"> 
+        <a href="/">
+            Projects
+        </a> 
+    </div>
+
+    {% for project in posts %}
+        {% if project.type == "project" %}
+            <li>
+                <div align="right">
+                    <a href="{{ project.path }}">{{ project.title }}</a>
+                    &nbsp;
+
+                    {% if project.github-link %}
+                        <a style="color:black" href="{{ project.github-link }}" title="github repo">
+                            <i class="fa fa-github-square" aria-hidden="true"></i>
+                        </a>
+                    {% else %}
+                        <a style="color:rgb(200,200,200)" href="#" title="no github repo">
+                            <i class="fa fa-github-square" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% if project.blog-link %}
+                        <a style="color:black" href="{{ project.blog-link }}" title="blog post">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                        </a>
+                    {% else %}
+                        <a style="color:rgb(200,200,200)" href="#" title="no blog post">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% if project.demo-link %}
+                        <a style="color:black" href="{{ project.demo-link }}" title="demo link">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </a>
+                    {% else %}
+                        <a style="color:rgb(200,200,200)" href="#" title="no demo link">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                </div>
+
+
+                <p> {{ project.description }} </p>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+
+<!-- <p style="max-width: 1000px"> -->
