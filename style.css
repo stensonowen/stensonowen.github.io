@@ -1,0 +1,119 @@
+.left, .right {
+    position: absolute;
+    bottom: 0;
+}
+
+.left {
+    top: 33%;
+    left: 0;
+    width: 33%;
+    -moz-transform: translateY(-33%);
+    -webkit-transform: translateY(-33%);
+    transform: translateY(-33%);
+}
+
+.right {
+    top: 0;
+    right: 0;
+    width: 67%;
+    overflow:scroll;
+}
+
+.disabledLink.disabled {pointer-events:none;}
+a.disabled {
+    pointer-events: none;
+}
+
+body {
+    font-family: fontawesome;
+/* font: 16px Cambria, sans-serif; */
+}
+
+
+
+.project-list li {
+  list-style: none;
+  text-align: left;
+  margin: 20px;
+}
+
+.project-list li a {
+  font-weight: 200;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.project-list li a:hover {
+  text-decoration: underline;
+}
+
+
+.project-list div a {
+  font-weight: 300;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+article {
+  margin-top: 50px;
+}
+
+/* Not sure what this does
+ * Maybe remove it
+ */
+@media all and (max-width:1024px) {
+  main {
+    padding: 25px 40px;
+  }
+  nav {
+    position: static;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  nav .menu-item {
+    display: inline-block;
+    padding: 10px 0 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: border-left 0.1s;
+  }
+  .menu hr {
+    display: block;
+  }
+  .menu-item.current,
+  .menu-item:hover {
+    border-left: none;
+  }
+}
+
+@media all and (max-width:768px) {
+  h1 {
+    font-size: 40px;
+  }
+  main {
+    padding: 20px 40px;
+  }
+}
+
+@media all and (max-width:390px) {
+  header {
+    margin-top: 10px;
+    height: 50px;
+  }
+  #stage {
+    display: none;
+  }
+  main {
+    padding: 15px 20px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
